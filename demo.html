@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper{
+            width: 100vw;
+            height: 20vh;
+        }
+        .p1{
+            width: calc(100% - 300px);
+            height: 100%;
+            float: left;
+            background-color: darkcyan;
+        }
+        .p2{
+            float: left;
+            width: 300px;
+            background-color: goldenrod;
+            height: 100%;
+        }
+        .class1{
+            width: 100%;
+        }
+        .class2{
+            animation-name: h2;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+        .class3{
+            animation-name: h1;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: linear;
+        }
+        @keyframes h1 {
+            to{
+                transform: translateX(300px);
+            }
+        }
+        @keyframes h2 {
+            to{
+                width: 100%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+<div id="app" x-data="myData()">
+    <div class="wrapper">
+        <div class="p1" :class="[class1,class2]">
+
+        </div>
+        <div class="p2" x-show="p2" :class="[class3]">
+
+        </div>
+    </div>
+    <button @click="open1()">toggle</button>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+<script>
+    function myData() {
+        return {
+            p2:true,
+            class1:'',
+            class2:'',
+            class3:'',
+            open1(){
+                if (this.p2 == true){
+                    this.p2 = false
+                    this.class1 = 'class1'
+                    this.class2 = 'class2'
+                    this.class3 = 'class3'
+                }else {
+                    this.p2 = true
+                    this.class1 = ''
+                    this.class2 = 'class2'
+                    this.class3 = 'class3'
+                }
+            }
+        }
+    }
+</script>
+</html>
