@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多级菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        main {
+            background-color: #ddd;
+            flex-grow: 1;
+        }
+
+        article {
+            height: 50px;
+            background-color: darkgray;
+            display: flex;
+            flex-direction: row;
+            border-top: 1px solid gray;
+        }
+        article section{
+            flex-grow: 1;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+        }
+        article section:nth-child(n+2){
+            border-left: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        main
+    </main>
+    <article>
+        <section>1</section>
+        <section>2</section>
+        <section>3</section>
+    </article>
+</body>
+
+</html>
