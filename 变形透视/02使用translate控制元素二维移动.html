@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02使用translate控制元素二维移动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        article {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border: 5px solid seagreen;
+        }
+        article div{
+            position: absolute;
+            height: 50px;
+            width: 50px;
+        }
+        article div:nth-child(1){
+            background-color:slateblue;
+        }
+        article div:nth-child(2){
+            background-color: steelblue;
+            transition: all 1s linear;
+        }
+        article div:nth-child(2):hover{
+            transform: translateX(-100%);
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div></div>
+        <div></div>
+    </article>
+</body>
+
+</html>
